@@ -1,0 +1,40 @@
+Ques. Paint houses in such a way that it costs minimum and two consecutive houses cannot be painted with same color. Find cost.
+
+
+int n=number of houses
+int c=number of colors present to paint the house=3
+arr[i][j]- price of painting ith house with jth color;
+int **arr=new int *[n];
+for(int i=0;i<n;i++){
+arr[i]=new int[3];
+for(int j=0;j<3;j++){
+cin<<arr[i][j];
+}
+
+}
+
+int **dp=new int*[n];
+for(int i=0;i<n;i++){
+dp[i]=new int[c];
+for(int j=0;j<c;j++){
+dp[i][j]=0;
+}
+
+
+///Paint first house
+}
+for(int i=0;i<c;i++){
+dp[0][i]=arr[0][i];
+}
+for(int i=1;i<n;i++){
+   
+     dp[i][0]=min(dp[i-1][1],dp[i-1][2])+arr[i][0];
+   
+     dp[i][1]=min(dp[i-1][0],dp[i-1][2])+arr[i][1];
+   
+      dp[i][2]=min(dp[i-1][0],dp[i-1][1])+arr[i][2];
+}
+int ans=min(dp[n-1][0],min(dp[n-1][1],dp[n-1][2]));
+
+cout<<ans;
+}

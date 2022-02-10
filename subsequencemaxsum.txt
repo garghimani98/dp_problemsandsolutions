@@ -1,0 +1,19 @@
+Find the sum of elements of subsequence whose sum is maximum in an array and consecutive elements cannot be a part of subsequence.
+
+
+int n=arr.length();
+
+int exc=0;
+int inc=arr[0];
+
+for(int i=1;i<n;i++){
+int ninc=exc+arr[i];
+int nexc=max(inc,exc);
+
+exc=nexc;
+inc=ninc;
+
+}
+
+int ans=max(exc,inc);
+cout<<ans;
