@@ -1,0 +1,15 @@
+Find number of ways to tile a n*m floor using m*1 tiles;
+
+int *dp=new int[n+1];
+
+for(int i=1;i<=n;i++)
+{
+   if(i<m)
+     dp[i]=1//tiles will be placed only vertically if length of floor <length of tile;
+   else if(i==m){
+     dp[i]=1+1;// all tiles can either be placed vertically (1*m) or horizontally(m*1)
+   else
+     dp[i]=dp[i-1]+dp[i-m];
+}
+return dp[n];
+}

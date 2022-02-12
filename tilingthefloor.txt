@@ -1,0 +1,22 @@
+Given n*2 floor . find number of ways to tile it using 2*1 tiles.
+  
+
+Meaning -dp[n]=number of wayds to tile floor of length n.
+
+int*dp=new int[n+1];
+
+
+dp[0]=0;//no of ways to tile floor with area 0(0*2);
+
+dp[1]=1;// no of ways to tile floor with area 2(1*2);
+
+dp[2]=2;no of ways to tile floor with area 4(2*2);
+
+
+for(int i=3;i<=n;i++){
+dp[i]=dp[i-1]+dp[i-2];
+
+}
+
+
+return dp[n];

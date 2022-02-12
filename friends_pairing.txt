@@ -1,0 +1,21 @@
+find number of ways to pair n friends if they can either stay single or pair up with others.
+
+f(n)=f(n-1)+((n-1)*f(n-2));
+
+f(n-1)-It means first friend will stay single so brings us the answer of n-1 friends
+
+f(n-2)- It means first friend will pair up with all the other friends so left people will
+ be n-2 so it will get us the answer of n-2 friends
+
+
+dp[n+1];
+dp[0]=0;
+dp[1]=1;
+dp[2]=2;
+dp[3]=4;
+
+for(int i=4;i<=n;i++){
+
+dp[i]=dp[i-1]+(dp[i-2]*i-1);
+
+}
