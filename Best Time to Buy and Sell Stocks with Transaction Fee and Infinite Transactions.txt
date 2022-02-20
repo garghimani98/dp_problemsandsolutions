@@ -1,0 +1,43 @@
+Ques- You are given n days and an array of size n denoting proce of sa stochk on ith day. Calculate maximum profit that can
+be earned if multiple transactions are allowed but two transactions cannot overlap each other. (BSBS)buy sell buy sell this 
+should be followed;
+and when you sell a stock a fine will be charged.
+
+int n;
+cin>>n;
+int *prices=new int[n];
+for(int i=0;i<n;i++)){
+cin>>prices[i];
+
+}
+int fine;
+cin>>fine;
+
+
+int obp=-arr[0];
+int osp=0;
+
+for(int i=1;i<n;i++){
+int nbp=0;
+int nsp=0;
+if(osp-prices[i]>obp)
+nbp=osp-prices[i];
+else
+nbp=obp;
+
+if(obp+prices[i]-fine>osp){
+nsp=obp+prices[i]-fine;
+
+}
+else{
+nsp=osp;
+
+}
+osp=nsp;
+obp=nbp;
+
+}
+
+int ans= osp;
+
+cout<<ans<<end;

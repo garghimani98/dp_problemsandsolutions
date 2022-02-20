@@ -1,0 +1,54 @@
+Ques- You are given n days and an array of size n denoting proce of sa stochk on ith day. Calculate maximum profit that can
+be earned if multiple transactions are allowed but two transactions cannot overlap each other. (BSBS)buy sell buy sell this 
+should be followed; but after selling a stock you have to cool down for a day to start next transaction
+
+int n;
+cin>>n;
+int *prices=new int[n];
+for(int i=0;i<n;i++)){
+cin>>prices[i];
+
+}
+
+int obp=-arr[0];//old bought state profit
+int osp=0;// old sold state profit
+int ocp=0;// old cool down profit
+
+for(int i=1;i<n;i++){
+int nbp=0;
+int nsp=0;
+int ncp=0;
+
+
+//calculating new brought state profit
+if(ocp-arr[i]>obp){
+nbp=ocp-arr[i];
+
+}
+else{
+nbp=obp;
+
+}
+
+//calculating new selling state profit
+if(obp+arr[i]>osp)
+
+nsp=obp+arr[i];
+else
+nsp=osp;
+
+
+//calculating cool down profit
+if(osp>ocp){
+ncp=osp;
+}
+else{
+ncp=ocp;
+}
+
+obp=nbp;
+osp=nsp;
+ocp=ncp;
+}
+
+cout<<osp;
